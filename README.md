@@ -2,8 +2,9 @@
 
 This is a full-stack CRUD application built with [Next.js](https://nextjs.org) and  bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app). It's using the Page Router, JavaScript, and Tailwind CSS. Currently uses JSON files for data storage with a structure that can easily be migrated to PostgreSQL.
 
-> ⚠️ This is the template version using JSON files (on the `main` branch).
->    For the complete PostgreSQL version, switch to the [`postgresql` branch](https://github.com/fraternity25/Next-crud-template/tree/postgresql).
+## ⚠️ NOTE:  
+This is the template version using JSON files (on the `main` branch).
+For the complete PostgreSQL version, switch to the [`postgresql` branch](https://github.com/fraternity25/Next-crud-template/tree/postgresql).
 
 ## Features
 
