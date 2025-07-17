@@ -1,6 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-import { DataService } from '../../lib/dataService';
+import { getUsers, createUser } from '../../lib/dataService';
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -8,9 +6,10 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const users = await DataService.getUsers();
+        const users = await getUsers();
         res.status(200).json(users);
       } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Failed to fetch users' });
       }
       break;
@@ -18,14 +17,15 @@ export default async function handler(req, res) {
     case 'POST':
       try {
         const { name, email } = req.body;
-        
+
         if (!name || !email) {
           return res.status(400).json({ error: 'Name and email are required' });
         }
-        
-        const newUser = await DataService.createUser({ name, email });
+
+        const newUser = await createUser({ name, email });
         res.status(201).json(newUser);
       } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Failed to create user' });
       }
       break;
